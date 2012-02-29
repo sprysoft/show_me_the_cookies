@@ -90,5 +90,26 @@ shared_examples "the API" do
         cookies_should_contain('fresh','vegetables')
       end
     end
+
+    describe "setting_cookies" do
+
+      it "should contain cookies" do
+        visit "/"
+
+        set_cookie 'capybara', 'awesome', :path => '/', :expires => Time.now + 60*60*24*365
+
+        cookies_should_contain('capybara', 'awesome')
+        expire_cookies
+        cookies_should_contain('capybara', 'awesome')
+      end
+
+      it "should not set expired cookies" do
+        visit "/"
+
+        set_cookie 'webrat', 'sucks', :path => '/', :expires => Time.now
+
+        cookies_should_not_contain('webrat', 'sucks')
+      end
+    end
   end
 end

@@ -24,7 +24,7 @@ class ShowMeTheCookies::Selenium
   end
 
   def set_cookie(cookie_name, value, opts = {})
-    cookie_details => {
+    cookie_details = {
       :name => cookie_name,
       :value => value
     }.merge! opts

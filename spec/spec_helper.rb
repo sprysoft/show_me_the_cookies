@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'capybara/rspec'
 
 require File.join(File.dirname(__FILE__), *%w[app set_cookie])
