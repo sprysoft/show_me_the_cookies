@@ -25,7 +25,7 @@ class ShowMeTheCookies::RackTest
     end
   end
 
-  def set_cookie(cookie_name, value, opts => {})
+  def set_cookie(cookie_name, value, opts = {})
     raise
   end
 
