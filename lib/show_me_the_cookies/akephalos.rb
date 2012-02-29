@@ -26,6 +26,10 @@ class ShowMeTheCookies::Akephalos
     end
   end
 
+  def set_cookie(cookie_name, value, opts => {})
+    raise
+  end
+
 private
   def get_me_the_raw_cookie(cookie_name)
     @browser.cookies[cookie_name.to_s]

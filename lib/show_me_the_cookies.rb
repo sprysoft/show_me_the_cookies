@@ -35,6 +35,10 @@ module ShowMeTheCookies
     current_driver_adapter.expire_cookies
   end
 
+  def set_cookie(cookie_name, value, opts => {})
+    current_driver_adapter.set_cookie(cookie_name, value, opts)
+  end
+
 private
   def adapters
     @@drivers ||= {
